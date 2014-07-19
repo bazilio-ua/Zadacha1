@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42B499BC19765D5300FF8ADD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B499BB19765D5300FF8ADD /* Cocoa.framework */; };
+		42B499C619765D5300FF8ADD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42B499C419765D5300FF8ADD /* InfoPlist.strings */; };
+		42B499C819765D5300FF8ADD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B499C719765D5300FF8ADD /* main.m */; };
+		42B499CC19765D5300FF8ADD /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 42B499CA19765D5300FF8ADD /* Credits.rtf */; };
+		42B499CF19765D5300FF8ADD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B499CE19765D5300FF8ADD /* AppDelegate.m */; };
+		42B499D219765D5300FF8ADD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B499D019765D5300FF8ADD /* MainMenu.xib */; };
+		42B499DD19765EA500FF8ADD /* TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B499DC19765EA500FF8ADD /* TableController.m */; };
+		42B499E019765EB600FF8ADD /* TableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B499DF19765EB600FF8ADD /* TableData.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		42B499B719765D5300FF8ADD /* Zadacha1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zadacha1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42B499BB19765D5300FF8ADD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		42B499BE19765D5300FF8ADD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		42B499BF19765D5300FF8ADD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		42B499C019765D5300FF8ADD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		42B499C319765D5300FF8ADD /* Zadacha1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Zadacha1-Info.plist"; sourceTree = "<group>"; };
+		42B499C519765D5300FF8ADD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		42B499C719765D5300FF8ADD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42B499C919765D5300FF8ADD /* Zadacha1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zadacha1-Prefix.pch"; sourceTree = "<group>"; };
+		42B499CB19765D5300FF8ADD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		42B499CD19765D5300FF8ADD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		42B499CE19765D5300FF8ADD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42B499D119765D5300FF8ADD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		42B499DB19765EA500FF8ADD /* TableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableController.h; sourceTree = "<group>"; };
+		42B499DC19765EA500FF8ADD /* TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableController.m; sourceTree = "<group>"; };
+		42B499DE19765EB600FF8ADD /* TableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableData.h; sourceTree = "<group>"; };
+		42B499DF19765EB600FF8ADD /* TableData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableData.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42B499B419765D5300FF8ADD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42B499BC19765D5300FF8ADD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42B499AC19765D5300FF8ADD = {
+			isa = PBXGroup;
+			children = (
+				42B499C119765D5300FF8ADD /* Zadacha1 */,
+				42B499BA19765D5300FF8ADD /* Frameworks */,
+				42B499B819765D5300FF8ADD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42B499B819765D5300FF8ADD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42B499B719765D5300FF8ADD /* Zadacha1.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42B499BA19765D5300FF8ADD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42B499BB19765D5300FF8ADD /* Cocoa.framework */,
+				42B499BD19765D5300FF8ADD /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42B499BD19765D5300FF8ADD /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42B499BE19765D5300FF8ADD /* AppKit.framework */,
+				42B499BF19765D5300FF8ADD /* CoreData.framework */,
+				42B499C019765D5300FF8ADD /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		42B499C119765D5300FF8ADD /* Zadacha1 */ = {
+			isa = PBXGroup;
+			children = (
+				42B499CD19765D5300FF8ADD /* AppDelegate.h */,
+				42B499CE19765D5300FF8ADD /* AppDelegate.m */,
+				42B499DB19765EA500FF8ADD /* TableController.h */,
+				42B499DC19765EA500FF8ADD /* TableController.m */,
+				42B499DE19765EB600FF8ADD /* TableData.h */,
+				42B499DF19765EB600FF8ADD /* TableData.m */,
+				42B499D019765D5300FF8ADD /* MainMenu.xib */,
+				42B499C219765D5300FF8ADD /* Supporting Files */,
+			);
+			path = Zadacha1;
+			sourceTree = "<group>";
+		};
+		42B499C219765D5300FF8ADD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42B499C319765D5300FF8ADD /* Zadacha1-Info.plist */,
+				42B499C419765D5300FF8ADD /* InfoPlist.strings */,
+				42B499C719765D5300FF8ADD /* main.m */,
+				42B499C919765D5300FF8ADD /* Zadacha1-Prefix.pch */,
+				42B499CA19765D5300FF8ADD /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42B499B619765D5300FF8ADD /* Zadacha1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42B499D519765D5300FF8ADD /* Build configuration list for PBXNativeTarget "Zadacha1" */;
+			buildPhases = (
+				42B499B319765D5300FF8ADD /* Sources */,
+				42B499B419765D5300FF8ADD /* Frameworks */,
+				42B499B519765D5300FF8ADD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zadacha1;
+			productName = Zadacha1;
+			productReference = 42B499B719765D5300FF8ADD /* Zadacha1.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42B499AE19765D5300FF8ADD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 42B499B119765D5300FF8ADD /* Build configuration list for PBXProject "Zadacha1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 42B499AC19765D5300FF8ADD;
+			productRefGroup = 42B499B819765D5300FF8ADD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42B499B619765D5300FF8ADD /* Zadacha1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42B499B519765D5300FF8ADD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42B499C619765D5300FF8ADD /* InfoPlist.strings in Resources */,
+				42B499CC19765D5300FF8ADD /* Credits.rtf in Resources */,
+				42B499D219765D5300FF8ADD /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42B499B319765D5300FF8ADD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42B499C819765D5300FF8ADD /* main.m in Sources */,
+				42B499CF19765D5300FF8ADD /* AppDelegate.m in Sources */,
+				42B499DD19765EA500FF8ADD /* TableController.m in Sources */,
+				42B499E019765EB600FF8ADD /* TableData.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		42B499C419765D5300FF8ADD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42B499C519765D5300FF8ADD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		42B499CA19765D5300FF8ADD /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42B499CB19765D5300FF8ADD /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		42B499D019765D5300FF8ADD /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42B499D119765D5300FF8ADD /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42B499D319765D5300FF8ADD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		42B499D419765D5300FF8ADD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		42B499D619765D5300FF8ADD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Zadacha1/Zadacha1-Prefix.pch";
+				INFOPLIST_FILE = "Zadacha1/Zadacha1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		42B499D719765D5300FF8ADD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Zadacha1/Zadacha1-Prefix.pch";
+				INFOPLIST_FILE = "Zadacha1/Zadacha1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42B499B119765D5300FF8ADD /* Build configuration list for PBXProject "Zadacha1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42B499D319765D5300FF8ADD /* Debug */,
+				42B499D419765D5300FF8ADD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42B499D519765D5300FF8ADD /* Build configuration list for PBXNativeTarget "Zadacha1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42B499D619765D5300FF8ADD /* Debug */,
+				42B499D719765D5300FF8ADD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42B499AE19765D5300FF8ADD /* Project object */;
+}
