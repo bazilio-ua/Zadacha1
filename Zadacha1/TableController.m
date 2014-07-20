@@ -8,10 +8,39 @@
 
 #import "TableController.h"
 
-@implementation TableController
+NSString *path;
+NSFileManager *file;
+NSMutableDictionary *plist;
+NSMutableArray *arrayStrings;
 
-@synthesize plist;
-@synthesize arrayStrings;
+void writePlist (void)
+{
+	path = [@"~/TableStore.plist" stringByExpandingTildeInPath];
+	NSMutableArray *array = [[NSMutableArray alloc] init];
+	
+	NSLog(@"Write Strings to File");
+	for (TableData *data in arrayStrings) 
+	{
+		NSLog(@"write string %@", data.string);
+		// add the new string object to the array
+		[array addObject:data.string];
+	}
+	
+	plist = [NSMutableDictionary dictionaryWithObjectsAndKeys:array, @"ArrayKey", @"Some string", @"StringKey", nil];
+	[plist writeToFile:path atomically:NO];
+	
+	NSLog(@"WRITE: a new plist file: %@ with array of strings %@", path, plist);
+	
+	// done with array
+	[array release];
+}
+
+@implementation TableController
+/*
+@synthesize path;
+@synthesize file;
+@synthesize plist;	*/
+//@synthesize arrayStrings;
 @synthesize aTable;
 
 #define MyPrivateTableViewDataType @"MyPrivateTableViewDataType"
@@ -24,16 +53,49 @@
 		NSLog(@"string %@", data.string);
 	}
 }
-
+/*
+- (void)writePlist
+{
+	path = [@"~/TableStore.plist" stringByExpandingTildeInPath];
+	NSMutableArray *array = [[NSMutableArray alloc] init];
+	
+	NSLog(@"Write Strings to File");
+	for (TableData *data in arrayStrings) 
+	{
+		NSLog(@"write string %@", data.string);
+		// add the new string object to the array
+		[array addObject:data.string];
+	}
+	
+	plist = [NSMutableDictionary dictionaryWithObjectsAndKeys:array, @"ArrayKey", @"Some string", @"StringKey", nil];
+	[plist writeToFile:path atomically:NO];
+	
+	NSLog(@"WRITE: a new plist file: %@ with array of strings %@", path, plist);
+	
+	// done with array
+	[array release];
+}
+*/
 - (IBAction)writeStrings:(id)sender
 {
-	NSLog(@"Write Strings to File");
+//	[self writePlist];
+	writePlist();
+}
+
+- (void)receivedNotification:(NSNotification *)note 
+{
+    NSDictionary *obj = [note object];
+    NSLog(@"%@",obj);
+    //dismiss the date picker here...
+    //etc...
 }
 
 - (void)awakeFromNib
 {
-	NSString *path = [@"~/TableStore.plist" stringByExpandingTildeInPath];
-	NSFileManager *file = [NSFileManager defaultManager];
+//	NSString *path = [@"~/TableStore.plist" stringByExpandingTildeInPath];
+//	NSFileManager *file = [NSFileManager defaultManager];
+	path = [@"~/TableStore.plist" stringByExpandingTildeInPath];
+	file = [NSFileManager defaultManager];
 	
 	if ([file fileExistsAtPath:path])
 	{
@@ -165,7 +227,7 @@
 	else
 	{
 		TableData *data = [arrayStrings objectAtIndex:dragRow];
-		[[data retain] autorelease]; // set this before removeObjectAtIndex
+		[[data retain] autorelease]; // set this before removeObjectAtIndex (retain it until insertObject)
 		[arrayStrings removeObjectAtIndex:dragRow];
 		[arrayStrings insertObject:data atIndex:row];
 	}

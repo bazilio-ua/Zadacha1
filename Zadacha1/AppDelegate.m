@@ -22,16 +22,33 @@
 	// Insert code here to initialize your application
 }
 
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
+{
+	// place here code to write out ours strings to file
+	writePlist();
+	NSLog(@"applicationShouldTerminate");
+	return NSTerminateNow;
+}
+
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
 {
+	NSLog(@"applicationShouldTerminateAfterLastWindowClosed");
 	return YES;
 }
 
-- (void)windowWillClose:(NSNotification *)notification 
+- (void)applicationWillTerminate:(NSNotification *)aNotification
 {
-    // whichever operations are needed when the
-    // window is about to be closed
-	NSLog(@"Window Close");
+	NSLog(@"applicationWillTerminate");
+}
+
+- (void)applicationWillUpdate:(NSNotification *)aNotification
+{
+//	NSLog(@"applicationWillUpdate");
+}
+
+- (void)applicationDidUpdate:(NSNotification *)aNotification
+{
+//	NSLog(@"applicationDidUpdate");
 }
 
 @end

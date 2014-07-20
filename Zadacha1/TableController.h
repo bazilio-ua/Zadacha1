@@ -9,13 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "TableData.h"
 
-@interface TableController : NSObjectController
+void writePlist (void);
 
-@property (retain) NSMutableDictionary *plist;
+@interface TableController : NSObjectController
+{
+//	NSMutableArray *arrayStrings;
+	NSTableView *aTable;
+}
+/*
+@property (retain) NSString *path;
+@property (retain) NSFileManager *file;
+@property (retain) NSMutableDictionary *plist;	*/
 //@property (assign) NSMutableArray *arrayStrings;
-@property (retain) NSMutableArray *arrayStrings;
+//@property (retain) NSMutableArray *arrayStrings;
 @property (assign) IBOutlet NSTableView *aTable;
 
+//- (void)writePlist;
 - (IBAction)listStrings:(id)sender;
 - (IBAction)writeStrings:(id)sender;
 

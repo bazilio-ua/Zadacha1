@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Zadacha1/TableController.m"
-         timestampString = "427410975.903025"
+         timestampString = "427584821.119002"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "122"
-         endingLineNumber = "122"
+         startingLineNumber = "184"
+         endingLineNumber = "184"
          landmarkName = "-tableView:objectValueForTableColumn:row:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -23,12 +23,26 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Zadacha1/TableController.m"
-         timestampString = "427410975.903025"
+         timestampString = "427584821.119002"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "125"
-         endingLineNumber = "125"
+         startingLineNumber = "187"
+         endingLineNumber = "187"
          landmarkName = "-tableView:objectValueForTableColumn:row:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Zadacha1/AppDelegate.m"
+         timestampString = "427580349.468359"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
+         landmarkName = "-applicationShouldTerminate:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
