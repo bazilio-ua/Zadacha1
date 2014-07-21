@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423B017A197D6A340029703F /* objc.png in Resources */ = {isa = PBXBuildFile; fileRef = 423B0179197D6A340029703F /* objc.png */; };
 		42B499BC19765D5300FF8ADD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B499BB19765D5300FF8ADD /* Cocoa.framework */; };
 		42B499C619765D5300FF8ADD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42B499C419765D5300FF8ADD /* InfoPlist.strings */; };
 		42B499C819765D5300FF8ADD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B499C719765D5300FF8ADD /* main.m */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		423B0179197D6A340029703F /* objc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = objc.png; sourceTree = "<group>"; };
 		42B499B719765D5300FF8ADD /* Zadacha1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zadacha1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B499BB19765D5300FF8ADD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		42B499BE19765D5300FF8ADD /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				42B499C319765D5300FF8ADD /* Zadacha1-Info.plist */,
+				423B0179197D6A340029703F /* objc.png */,
 				42B499C419765D5300FF8ADD /* InfoPlist.strings */,
 				42B499C719765D5300FF8ADD /* main.m */,
 				42B499C919765D5300FF8ADD /* Zadacha1-Prefix.pch */,
@@ -165,6 +168,7 @@
 				42B499C619765D5300FF8ADD /* InfoPlist.strings in Resources */,
 				42B499CC19765D5300FF8ADD /* Credits.rtf in Resources */,
 				42B499D219765D5300FF8ADD /* MainMenu.xib in Resources */,
+				423B017A197D6A340029703F /* objc.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

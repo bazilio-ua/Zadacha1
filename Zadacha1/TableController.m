@@ -177,12 +177,43 @@ NSMutableString *generateRandomString (void)
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
 //	NSLog(@"objectValueForTableColumn");
+	NSString* ident = [aTableColumn identifier];
+	if ([ident isEqual:@"strings"])
+	{
+		if (aTableView == aTable) 
+		{
+			TableData *data = [arrayStrings objectAtIndex:rowIndex];
+			return data.string;
+		}
+		return NULL;
+	}
+	else if ([ident isEqual:@"image"])
+	{
+/*		NSString *imgpath = [@"~/objc.png" stringByExpandingTildeInPath];
+		NSImage *image = [[NSImage alloc] initWithContentsOfFile:imgpath];
+*/		
+		NSString *imgpath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"objc.png"];		
+		NSImage *image =  [[NSImage alloc] initWithContentsOfFile:imgpath];
+
+		return image;
+//		return image;
+		
+//		return NULL;
+	}
+	else
+		return NULL;
+	
+//	return NULL;
+
+/*	
+//	NSLog(@"objectValueForTableColumn");
 	if (aTableView == aTable) 
 	{
 		TableData *data = [arrayStrings objectAtIndex:rowIndex];
 		return data.string;
 	}
 	return NULL;
+*/
 }
 
 - (void)tableView:(NSTableView *)aTableView setObjectValue:(id)anObject forTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
