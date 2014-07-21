@@ -196,7 +196,7 @@ NSMutableString *generateRandomString (void)
 	{
 		// create new file with random-generated string
 		// and fill NSDictionary array
-		NSString *letters  = @" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY0123456789"; // latin alphabet with numbers
+//		NSString *letters  = @" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY0123456789"; // latin alphabet with numbers
 		NSMutableArray *array = [[NSMutableArray alloc] init];
 //		srandom((unsigned)time(NULL)); // seed the random number generator
 //		int i, j;
@@ -204,7 +204,7 @@ NSMutableString *generateRandomString (void)
 		int num = ((int)random() % 10) + 1; // [1..10] ten strings in array is enough?
 		for (int i = 0; i < num; i++) 
 		{
-			int len = ((int)random() % 100) + 1; // [1..100] hundred letters in string is enough?
+/*			int len = ((int)random() % 100) + 1; // [1..100] hundred letters in string is enough?
 			NSMutableString *string = [NSMutableString stringWithCapacity:len];
 			for (int j = 0; j < len; j++)
 			{
@@ -213,7 +213,8 @@ NSMutableString *generateRandomString (void)
 				[string appendFormat:@"%C", c];
 			}
 			// add the new string object to the array
-			[array addObject:string];
+			[array addObject:string];	*/
+			[array addObject:generateRandomString()];
 		}
 		
 		plist = [NSMutableDictionary dictionaryWithObjectsAndKeys:array, @"ArrayKey", @"Some string", @"StringKey", nil];
