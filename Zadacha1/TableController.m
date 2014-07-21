@@ -195,6 +195,7 @@ NSMutableString *generateRandomString (void)
 		NSString *imgpath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"objc.png"];		
 		NSImage *image =  [[NSImage alloc] initWithContentsOfFile:imgpath];
 
+		[image autorelease]; //done with image
 		return image;
 //		return image;
 		
