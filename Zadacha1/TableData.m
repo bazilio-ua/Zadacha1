@@ -10,8 +10,6 @@
 
 @implementation TableData
 
-//@synthesize string;
-
 - (id)init
 {
 	return [self initWithString:@"empty string"];

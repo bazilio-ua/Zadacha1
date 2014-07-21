@@ -13,8 +13,6 @@
 	NSString *string;
 }
 
-//@property (retain) NSString *string;
-
 - (id)initWithString:(NSString *)str;
 
 - (NSString *)string;
