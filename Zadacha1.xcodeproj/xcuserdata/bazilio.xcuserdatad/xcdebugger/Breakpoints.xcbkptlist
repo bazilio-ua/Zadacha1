@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Zadacha1/TableController.m"
-         timestampString = "427625822.274303"
+         timestampString = "427626225.894387"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "270"
-         endingLineNumber = "270"
+         startingLineNumber = "272"
+         endingLineNumber = "272"
          landmarkName = "-tableView:objectValueForTableColumn:row:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Zadacha1/TableController.m"
-         timestampString = "427625822.274303"
+         timestampString = "427626225.894387"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "274"
-         endingLineNumber = "274"
+         startingLineNumber = "276"
+         endingLineNumber = "276"
          landmarkName = "-tableView:objectValueForTableColumn:row:"
          landmarkType = "5">
       </FileBreakpoint>

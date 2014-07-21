@@ -115,7 +115,8 @@ NSMutableString *generateRandomString (void)
 		[arrayStrings addObject:data];
 	}
 	[data release]; // done with data
-	
+
+	[aTable noteNumberOfRowsChanged];
 	[aTable reloadData];
 	
 	NSLog(@"add");
@@ -151,6 +152,7 @@ NSMutableString *generateRandomString (void)
 	
 	[arrayStrings removeObjectsInArray:tempArray];
 	
+	[aTable noteNumberOfRowsChanged];
 	[aTable reloadData];
 	
 	NSLog(@"del");
