@@ -35,6 +35,21 @@ void writePlist (void)
 	[array release];
 }
 
+NSMutableString *generateRandomString (void)
+{
+	NSString *letters  = @" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY0123456789"; // latin alphabet with numbers
+//	srandom((unsigned)time(NULL)); // seed the random number generator
+	int len = ((int)random() % 100) + 1; // [1..100] hundred letters in string is enough?
+	NSMutableString *string = [NSMutableString stringWithCapacity:len];
+	for (int j = 0; j < len; j++)
+	{
+		unsigned long r = arc4random() % [letters length];
+		unichar c = [letters characterAtIndex:r];
+		[string appendFormat:@"%C", c];
+	}
+	return string;
+}
+
 @implementation TableController
 /*
 @synthesize path;
@@ -82,18 +97,88 @@ void writePlist (void)
 	writePlist();
 }
 
-- (void)receivedNotification:(NSNotification *)note 
+- (IBAction)addString:(id)sender
 {
-    NSDictionary *obj = [note object];
-    NSLog(@"%@",obj);
-    //dismiss the date picker here...
-    //etc...
+	NSInteger index = [aTable selectedRow];
+	NSLog(@"index: %ld", index);
+	
+//	[arrayStrings addObject:[[TableData alloc] initWithString:@"random-add"]]; // @"random-add" // this is leak
+	
+//	TableData *data = [[TableData alloc] initWithString:@"random-add"];
+	TableData *data = [[TableData alloc] initWithString:generateRandomString()]; // @"random-add"
+	if (index != -1)
+	{
+		[arrayStrings insertObject:data atIndex:index];
+	}
+	else
+	{
+		[arrayStrings addObject:data];
+	}
+	[data release]; // done with data
+	
+	[aTable reloadData];
+	
+	NSLog(@"add");
+
+/*
+//	[arrayStrings addObject:[[TableData alloc] initWithString:@"random-add"]]; // @"random-add" // this is leak
+	
+//	TableData *data = [[TableData alloc] initWithString:@"random-add"];
+	TableData *data = [[TableData alloc] initWithString:generateRandomString()]; // @"random-add"
+	[arrayStrings addObject:data];
+	[data release]; // done with data
+
+	[aTable reloadData];
+	
+	NSLog(@"add");	*/
+}
+
+- (IBAction)delString:(id)sender
+{
+	NSIndexSet *enumerator = [aTable selectedRowIndexes];
+	NSUInteger index = [enumerator firstIndex];
+	NSMutableArray *tempArray = [NSMutableArray array];
+	id tempObject;
+	
+	while (index != NSNotFound) 
+	{
+		//work with current index
+		tempObject = [arrayStrings objectAtIndex:index]; // No modification, no problem
+		//get the next index in the set
+		index = [enumerator indexGreaterThanIndex:index];
+		[tempArray addObject:tempObject]; // keep track of the record to delete in tempArray
+	}
+	
+	[arrayStrings removeObjectsInArray:tempArray];
+	
+	[aTable reloadData];
+	
+	NSLog(@"del");
+
+//this variant is deprecated
+/*	NSEnumerator *enumerator = [aTable selectedRowEnumerator];
+	NSNumber *index;
+	NSMutableArray *tempArray = [NSMutableArray array];
+	id tempObject;
+	
+	while (index = [enumerator nextObject]) 
+	{
+		tempObject = [arrayStrings objectAtIndex:[index intValue]]; // No modification, no problem
+		[tempArray addObject:tempObject]; // keep track of the record to delete in tempArray
+	}
+	
+	[arrayStrings removeObjectsInArray:tempArray];
+	
+	[aTable reloadData];
+	
+	NSLog(@"del");	*/
 }
 
 - (void)awakeFromNib
 {
 //	NSString *path = [@"~/TableStore.plist" stringByExpandingTildeInPath];
 //	NSFileManager *file = [NSFileManager defaultManager];
+	srandom((unsigned)time(NULL)); // seed the random number generator
 	path = [@"~/TableStore.plist" stringByExpandingTildeInPath];
 	file = [NSFileManager defaultManager];
 	
@@ -111,7 +196,7 @@ void writePlist (void)
 		// and fill NSDictionary array
 		NSString *letters  = @" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY0123456789"; // latin alphabet with numbers
 		NSMutableArray *array = [[NSMutableArray alloc] init];
-		srandom((unsigned)time(NULL)); // seed the random number generator
+//		srandom((unsigned)time(NULL)); // seed the random number generator
 //		int i, j;
 //		int num, len; // number of strings in array and lenght of string
 		int num = ((int)random() % 10) + 1; // [1..10] ten strings in array is enough?
@@ -172,6 +257,7 @@ void writePlist (void)
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
+	NSLog(@"numberOfRowsInTableView");
 	if (aTableView == aTable) 
 	{
 		return [arrayStrings count];
@@ -181,6 +267,7 @@ void writePlist (void)
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
+	NSLog(@"objectValueForTableColumn");
 	if (aTableView == aTable) 
 	{
 		TableData *data = [arrayStrings objectAtIndex:rowIndex];
@@ -191,6 +278,7 @@ void writePlist (void)
 
 - (void)tableView:(NSTableView *)aTableView setObjectValue:(id)anObject forTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
+	NSLog(@"setObjectValue");
 	if (aTableView == aTable) 
 	{
 		TableData *data = [arrayStrings objectAtIndex:rowIndex];
@@ -201,6 +289,7 @@ void writePlist (void)
 
 - (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard
 {
+	NSLog(@"writeRowsWithIndexes");
 	NSData *indexData = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
 	[pboard declareTypes:[NSArray arrayWithObject:MyPrivateTableViewDataType] owner:self];
 	[pboard setData:indexData forType:MyPrivateTableViewDataType];
@@ -209,11 +298,13 @@ void writePlist (void)
 
 - (NSDragOperation)tableView:(NSTableView *)aTableView validateDrop:(id < NSDraggingInfo >)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)operation
 {
+	NSLog(@"validateDrop");
 	return NSDragOperationEvery;
 }
 
 - (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id < NSDraggingInfo >)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation
 {
+	NSLog(@"acceptDrop");
 	NSPasteboard *pboard = [info draggingPasteboard];
 	NSData *rowData = [pboard dataForType:MyPrivateTableViewDataType];
 	NSIndexSet *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];

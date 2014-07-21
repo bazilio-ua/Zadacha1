@@ -10,6 +10,7 @@
 #import "TableData.h"
 
 void writePlist (void);
+NSString *generateRandomString (void);
 
 @interface TableController : NSObjectController
 {
@@ -27,5 +28,7 @@ void writePlist (void);
 //- (void)writePlist;
 - (IBAction)listStrings:(id)sender;
 - (IBAction)writeStrings:(id)sender;
+- (IBAction)addString:(id)sender;
+- (IBAction)delString:(id)sender;
 
 @end
